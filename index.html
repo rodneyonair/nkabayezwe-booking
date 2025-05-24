@@ -8,5 +8,15 @@
   </head>
   <body>
     <p>If you are not redirected, <a href="https://editor.p5js.org/rodneyroskruge/full/0BYedahBR">click here</a>.</p>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then(reg => console.log("Service Worker registered:", reg.scope))
+        .catch(err => console.error("Service Worker registration failed:", err));
+    });
+  }
+</script>
   </body>
 </html>
